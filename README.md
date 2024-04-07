@@ -63,7 +63,7 @@ EXPOSE 8000
 
 CMD ["node","app.js"]
 
-
+---------------------------------
 docker build . -t node-app
 
 sudo usermod -a -G docker $USER
