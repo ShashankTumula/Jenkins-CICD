@@ -32,40 +32,60 @@ sudo apt update
    ![Screenshot (454)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/52a0f3e5-217c-4a60-b749-fb4ddc80148a)
 
 sudo apt install docker.io,
+
 generate an ssh key using ssh-keygen,
+
 In github add the public key,
+
 In jenkins add the public and private key,
+
 Now start the build, this time app will run in a docker container,
 
 ![Screenshot (455)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/f222a09b-a454-4561-8079-27e6d616b631)
 
 
+
 Go to the directory provided by jenkins after initial build
 
 
+
 create a docker file and enter the following-
+
 FROM node:12.12.0-alpine
+
 WORKDIR app
+
 COPY . .
+
 RUN npm install
+
 EXPOSE 8000
+
 CMD ["node","app.js"]
+
 
 docker build . -t node-app
 
 sudo usermod -a -G docker $USER
+
 docker run -d --name node-todo-app -p 8000:8000 todo-node-app
 
-Got to jenkins job
+
+# Got to jenkins job
 
 Execute shell-
+
 docker build . -t node-app-todo
+
 docker run -d --name node-app-container -p 8000:8000 node-app-todo
+
 
 Now, enable webhooks for the repository and link it to jenkins
 
 # Done!
+
 ![Screenshot (462)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/01f50c1f-c93c-4c36-951d-91770d3e919a)
+
 ![Screenshot (463)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/6ed03708-f0f4-4013-b3ff-8dd38fdb0768)
 
 Now, each time you commit some changes webhook will be triggered which will lead to the next build in Jenkins
