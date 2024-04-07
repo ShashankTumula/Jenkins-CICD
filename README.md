@@ -15,25 +15,28 @@ sudo apt update
     7  sudo apt-get update 
     8  sudo apt-get install jenkins
     9  sudo systemctl enable jenkins
-   10  sudo systemctl start jenkins
-   11  sudo systemctl status jenkins
+    10  sudo systemctl start jenkins
+    11  sudo systemctl status jenkins
 
    Use the password to create an admin jenkins account
-   12  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-   13  history
+    12  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+    13  history
 
 
    ![Screenshot (449)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/9b8f3c00-f3f0-469c-9dcc-a41a30e092cc)
+   
 
-   Create a job in jenkins and build 
+   # Create a job in jenkins and build 
+   
 
    ![Screenshot (454)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/52a0f3e5-217c-4a60-b749-fb4ddc80148a)
 
-sudo apt install docker.io
-generate an ssh key using ssh-keygen
-In github add the public key
-In jenkins add the public and private key
-Now start the build, this time app will run in a docker container
+sudo apt install docker.io,
+generate an ssh key using ssh-keygen,
+In github add the public key,
+In jenkins add the public and private key,
+Now start the build, this time app will run in a docker container,
+
 ![Screenshot (455)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/f222a09b-a454-4561-8079-27e6d616b631)
 
 
