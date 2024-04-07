@@ -88,4 +88,4 @@ Now, enable webhooks for the repository and link it to jenkins
 
 ![Screenshot (463)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/6ed03708-f0f4-4013-b3ff-8dd38fdb0768)
 
-# Now, each time you commit some changes webhook will be triggered which will lead to the next build in Jenkins
+# Now, each time you commit some changes, webhook will be triggered which will lead to the next build in Jenkins
