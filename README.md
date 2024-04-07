@@ -5,7 +5,9 @@ Create AWS EC2 instance
 Connect using ssh or ec2 instance connect
 
 Now, run
+
 sudo apt update
+
     3  sudo apt install openjdk-11-jre
     4  java -version
     5  curl -fsSL https://pkg.jenkins.io/debian/jenkins.io.key | sudo tee \   /usr/share/keyrings/jenkins-keyring.asc > /dev/null 
