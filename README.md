@@ -4,7 +4,7 @@ Automating the delivery of a nodejs app using jenkins and docker
 Create AWS EC2 instance
 Connect using ssh or ec2 instance connect
 
-Now, run
+Now, run the following in ubuntu(i used ec2)
 
 sudo apt update
 
