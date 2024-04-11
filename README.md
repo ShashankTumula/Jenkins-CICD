@@ -26,7 +26,7 @@ sudo apt update
    ![Screenshot (449)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/9b8f3c00-f3f0-469c-9dcc-a41a30e092cc)
    
 
-   # Create a job in jenkins and build 
+   ## Create a job in jenkins and build 
    
 
    ![Screenshot (454)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/52a0f3e5-217c-4a60-b749-fb4ddc80148a)
@@ -71,7 +71,7 @@ sudo usermod -a -G docker $USER
 docker run -d --name node-todo-app -p 8000:8000 todo-node-app
 
 
-# Got to jenkins job
+## Got to jenkins job
 
 Execute shell-
 
@@ -82,7 +82,8 @@ docker run -d --name node-app-container -p 8000:8000 node-app-todo
 
 Now, enable webhooks for the repository and link it to jenkins
 
-# OUTPUT-
+## OUTPUT-
+```
 Started by user Shashank Patel
 Running as SYSTEM
 Building in workspace /var/lib/jenkins/workspace/demo-app
@@ -137,11 +138,11 @@ Successfully tagged todo-node-app:latest
 + docker run -d --name node-todo-app -p 8000:8000 todo-node-app
 e68c2c682e7e61a76ebd2c9c6f7ecc48a25c0442b0948225e0210f4d9db5fc11
 Finished: SUCCESS
-
-# Done!
+```
+## Done!
 
 ![Screenshot (462)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/01f50c1f-c93c-4c36-951d-91770d3e919a)
 
 ![Screenshot (463)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/6ed03708-f0f4-4013-b3ff-8dd38fdb0768)
 
-# Now, each time you commit some changes, webhook will be triggered which will lead to the next build in Jenkins
+### Now, each time you commit some changes, webhook will be triggered which will lead to the next build in Jenkins
