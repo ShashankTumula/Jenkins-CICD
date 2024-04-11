@@ -82,6 +82,62 @@ docker run -d --name node-app-container -p 8000:8000 node-app-todo
 
 Now, enable webhooks for the repository and link it to jenkins
 
+# OUTPUT-
+Started by user Shashank Patel
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/demo-app
+The recommended git tool is: NONE
+using credential github-jenkins-demo
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/demo-app/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ShashankTumula/nodejs-todo.git # timeout=10
+Fetching upstream changes from https://github.com/ShashankTumula/nodejs-todo.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+using GIT_SSH to set credentials genkins github integration
+Verifying host key using known hosts file
+You're using 'Known hosts file' strategy to verify ssh host keys, but your known_hosts file does not exist, please go to 'Manage Jenkins' -> 'Security' -> 'Git Host Key Verification Configuration' and configure host key verification.
+ > git fetch --tags --force --progress -- https://github.com/ShashankTumula/nodejs-todo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision a38e66e0ab0e3aeba406c9300e209aee249e275f (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a38e66e0ab0e3aeba406c9300e209aee249e275f # timeout=10
+Commit message: "Merge pull request #187 from LondheShubham153/LondheShubham153-patch-22"
+ > git rev-list --no-walk a38e66e0ab0e3aeba406c9300e209aee249e275f # timeout=10
+[demo-app] $ /bin/sh -xe /tmp/jenkins11698672096673721826.sh
++ docker build . -t todo-node-app
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  25.34MB
+
+Step 1/7 : FROM node:12.2.0-alpine
+ ---> f391dabf9dce
+Step 2/7 : WORKDIR app
+ ---> Using cache
+ ---> 64f96360b3f4
+Step 3/7 : COPY . .
+ ---> Using cache
+ ---> 8c88f1c9bb10
+Step 4/7 : RUN npm install
+ ---> Using cache
+ ---> 031b64e67fad
+Step 5/7 : RUN npm run test
+ ---> Using cache
+ ---> e827e607f18f
+Step 6/7 : EXPOSE 8000
+ ---> Using cache
+ ---> 2bbcc0c1633f
+Step 7/7 : CMD ["node","app.js"]
+ ---> Using cache
+ ---> 0bb1f80a6cd6
+Successfully built 0bb1f80a6cd6
+Successfully tagged todo-node-app:latest
++ docker run -d --name node-todo-app -p 8000:8000 todo-node-app
+e68c2c682e7e61a76ebd2c9c6f7ecc48a25c0442b0948225e0210f4d9db5fc11
+Finished: SUCCESS
+
 # Done!
 
 ![Screenshot (462)](https://github.com/ShashankTumula/Jenkins-CICD/assets/103590482/01f50c1f-c93c-4c36-951d-91770d3e919a)
